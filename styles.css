@@ -94,8 +94,7 @@ a {
 
 .label,
 .paper-meta,
-.corner-title p,
-footer {
+.corner-title p {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -216,7 +215,7 @@ p {
 }
 
 .contact {
-  bottom: 4.5vh;
+  top: 4.5vh;
   right: 5vw;
   text-align: right;
 }
@@ -246,20 +245,8 @@ address a:focus-visible,
   opacity: 0.5;
 }
 
-footer {
-  position: absolute;
-  right: 5vw;
-  bottom: 1.5vh;
-  left: 4.5vw;
-  display: flex;
-  justify-content: flex-end;
-  color: rgba(12, 12, 12, 0.48);
-  font-size: 7px;
-}
-
 html.perspective-enabled [data-surface] {
   transform-origin: 0 0;
-  backface-visibility: hidden;
 }
 
 html.perspective-enabled .corner-title {
@@ -367,20 +354,13 @@ html.perspective-enabled .corner-title h1 {
   }
 
   .contact {
-    bottom: 6vh;
+    top: 3.2vh;
     right: 5vw;
   }
 
   address {
     font-size: 8px;
     line-height: 1.5;
-  }
-
-  footer {
-    right: 5vw;
-    bottom: 1.7vh;
-    left: 5vw;
-    font-size: 5.5px;
   }
 
 }
@@ -408,9 +388,6 @@ html.perspective-enabled .corner-title h1 {
     font-size: 55px;
   }
 
-  .contact {
-    bottom: 5vh;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
