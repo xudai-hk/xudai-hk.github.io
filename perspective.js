@@ -152,16 +152,16 @@
 
     const titleDestination = mobile
       ? [
-          [width * 0.40, height * 0.64],
-          [width * 0.56, height * 0.64],
-          [width * 0.78, height * 0.75],
-          [width * 0.18, height * 0.75],
+          [width * 0.32, height * 0.74],
+          [width * 0.64, height * 0.74],
+          [width * 0.84, height * 0.90],
+          [width * 0.12, height * 0.90],
         ]
       : [
-          [width * 0.42, height * 0.72],
-          [width * 0.58, height * 0.72],
-          [width * 0.75, height * 0.82],
-          [width * 0.25, height * 0.82],
+          [width * 0.36, height * 0.82],
+          [width * 0.64, height * 0.82],
+          [width * 0.78, height * 0.94],
+          [width * 0.22, height * 0.94],
         ];
     applySurface("floor-title", titleDestination);
 
