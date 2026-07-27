@@ -189,7 +189,7 @@ p {
   z-index: 2;
   top: 68%;
   left: 50%;
-  width: min(44vw, 620px);
+  width: min(66vw, 930px);
   text-align: center;
   transform: translate(-50%, -53%);
   perspective: 500px;
@@ -197,6 +197,7 @@ p {
 
 .corner-title p {
   margin-bottom: 2px;
+  font-size: 13.5px;
 }
 
 .corner-title p:last-child {
@@ -206,7 +207,7 @@ p {
 
 .corner-title h1 {
   margin: 0;
-  font-size: clamp(43px, 6.2vw, 90px);
+  font-size: clamp(64px, 9.3vw, 135px);
   font-weight: 900;
   line-height: 0.88;
   letter-spacing: -0.075em;
@@ -342,15 +343,15 @@ html.perspective-enabled .corner-title h1 {
   .corner-title {
     top: 60%;
     left: 48%;
-    width: 66vw;
+    width: 90vw;
   }
 
   .corner-title p {
-    font-size: 6.5px;
+    font-size: 9px;
   }
 
   .corner-title h1 {
-    font-size: clamp(40px, 15vw, 64px);
+    font-size: clamp(55px, 20.45vw, 87px);
   }
 
   .contact {
