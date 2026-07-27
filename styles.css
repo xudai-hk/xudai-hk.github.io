@@ -258,6 +258,10 @@ html.perspective-enabled .corner-title h1 {
   transform: none;
 }
 
+.orientation-hint {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .room {
     min-height: 520px;
@@ -391,8 +395,145 @@ html.perspective-enabled .corner-title h1 {
 
 }
 
+@media (orientation: landscape) and (max-height: 600px) {
+  .room {
+    height: 100svh;
+    min-height: 0;
+  }
+
+  .wall-left {
+    clip-path: polygon(0 0, 50% 0, 50% 68%, 0 88%);
+  }
+
+  .wall-right {
+    clip-path: polygon(50% 0, 100% 0, 100% 88%, 50% 68%);
+  }
+
+  .floor {
+    clip-path: polygon(0 88%, 50% 68%, 100% 88%, 100% 100%, 0 100%);
+    background:
+      radial-gradient(ellipse at 50% 68%, #f4f4f2 0%, #e7e8e8 58%, #d9dada 100%);
+  }
+
+  .room::after {
+    left: 50%;
+    top: 68%;
+    width: 42vw;
+    height: 24vh;
+  }
+
+  .signature strong {
+    font-size: 12px;
+  }
+
+  .about {
+    width: 34vw;
+  }
+
+  .publication {
+    width: 39vw;
+  }
+
+  .label {
+    margin-bottom: 6px;
+    font-size: 7px;
+  }
+
+  .about h2,
+  .publication h2 {
+    margin-bottom: 8px;
+    line-height: 1.04;
+  }
+
+  .about h2 {
+    font-size: clamp(16px, 2.5vw, 24px);
+  }
+
+  .publication h2 {
+    font-size: clamp(16px, 2.7vw, 26px);
+  }
+
+  .about > p:not(.label, .recognition) {
+    margin-bottom: 9px;
+    font-size: clamp(9px, 1.35vw, 12px);
+    line-height: 1.32;
+  }
+
+  .recognition,
+  .paper-meta {
+    font-size: 7px;
+  }
+
+  .authors {
+    margin-bottom: 9px;
+    font-size: 9px;
+  }
+
+  .publication > a {
+    font-size: 9px;
+  }
+
+  .corner-title {
+    width: min(72vw, 760px);
+  }
+
+  .corner-title p {
+    font-size: 8px;
+  }
+
+  .corner-title h1 {
+    font-size: clamp(48px, 9vw, 80px);
+  }
+
+  address {
+    font-size: 8px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 760px) {
+  .orientation-hint {
+    position: fixed;
+    z-index: 10;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    left: 50%;
+    display: block;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    margin: 0;
+    padding: 9px 12px 8px;
+    border: 1px solid #0c0c0c;
+    background: #0c0c0c;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 0s linear 180ms;
+    pointer-events: none;
+  }
+
+  .orientation-hint.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition-delay: 0s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto;
+  }
+
+  .orientation-hint {
+    transition: none;
   }
 }
