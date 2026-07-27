@@ -257,6 +257,19 @@ footer {
   font-size: 7px;
 }
 
+html.perspective-enabled [data-surface] {
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+}
+
+html.perspective-enabled .corner-title {
+  perspective: none;
+}
+
+html.perspective-enabled .corner-title h1 {
+  transform: none;
+}
+
 @media (max-width: 760px) {
   .room {
     min-height: 520px;
