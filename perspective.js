@@ -133,48 +133,22 @@
     ];
     const regions = mobile
       ? {
-          signature: [0.10, 0.055, 0.48, 0.08],
+          signature: [0.10, 0.055, 0.42, 0.075],
           about: [0.10, 0.15, 0.90, 0.50],
           publication: [0.08, 0.14, 0.92, 0.51],
+          contact: [0.52, 0.035, 0.92, 0.105],
         }
       : {
-          signature: [0.09, 0.055, 0.27, 0.082],
-          about: [0.09, 0.20, 0.82, 0.57],
+          signature: [0.09, 0.055, 0.17, 0.075],
+          about: [0.09, 0.20, 0.70, 0.57],
           publication: [0.17, 0.18, 0.90, 0.55],
+          contact: [0.78, 0.045, 0.92, 0.12],
         };
 
     applySurface("left-signature", regionOnPlane(leftWall, regions.signature));
     applySurface("left-about", regionOnPlane(leftWall, regions.about));
     applySurface("right-publication", regionOnPlane(rightWall, regions.publication));
-
-    const contactDestination = mobile
-      ? [
-          [width * 0.64, height * 0.86],
-          [width * 0.93, height * 0.90],
-          [width * 0.93, height * 0.96],
-          [width * 0.58, height * 0.92],
-        ]
-      : [
-          [width * 0.72, height * 0.88],
-          [width * 0.94, height * 0.91],
-          [width * 0.94, height * 0.96],
-          [width * 0.68, height * 0.93],
-        ];
-    const footerDestination = mobile
-      ? [
-          [width * 0.81, height * 0.965],
-          [width * 0.93, height * 0.97],
-          [width * 0.93, height * 0.987],
-          [width * 0.79, height * 0.98],
-        ]
-      : [
-          [width * 0.85, height * 0.965],
-          [width * 0.94, height * 0.97],
-          [width * 0.94, height * 0.987],
-          [width * 0.83, height * 0.98],
-        ];
-    applySurface("floor-contact", contactDestination);
-    applySurface("floor-footer", footerDestination);
+    applySurface("right-contact", regionOnPlane(rightWall, regions.contact));
 
     const titleDestination = mobile
       ? [
